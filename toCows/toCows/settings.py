@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,10 +77,12 @@ WSGI_APPLICATION = 'toCows.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+
+    'default': dj_database_url.config(default='postgres://yvmhaqfsmoatly:23d1085aa9d9a04e1d9147bc727e8cd7190dd4552abcb1450c94650e84679095@ec2-52-205-45-222.compute-1.amazonaws.com:5432/dbo33euphggknq')
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME': 'Crist29Rod$default',
