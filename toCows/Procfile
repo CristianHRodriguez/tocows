@@ -1,0 +1,1 @@
+web: gunicorn toCows.wsgi --log-file -
